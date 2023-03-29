@@ -1,6 +1,7 @@
-# Circular-to-JSON
 
-#### Circular-to-JSON is a small package that allows you to safely stringify and parse objects with circular references using the JSON format. This package is written in TypeScript.
+#### This library that provides a way to handle circular references when serializing and deserializing JSON objects. When serializing an object that has circular references, the default JSON.stringify() method will throw an error. CircularJSON provides a way to avoid this error by converting circular references to a stringified version of "[Circular]".
+
+#### CircularJSON works by using a recursive function to convert objects with circular references to a stringified version that contains a "[Circular]" flag. When deserializing, the library uses a reviver function to replace the "[Circular]" string with a reference to the original object. The library also uses a WeakSet or WeakMap to keep track of visited objects to avoid infinite recursion.
 
 ## Installation
 
