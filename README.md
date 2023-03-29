@@ -19,7 +19,7 @@ You can install using NPM or Yarn:
 
 #### This package exports a `CircularJSON` object with two methods: `stringify`, `parse` and `stringifyAndParse`. Here's how you can use them:
 
-### Stringify
+## Stringify
 
 ```javascript
 import { CircularJSON } from 'circular-to-json';
@@ -39,7 +39,7 @@ console.log(jsonString)
 '{"a":1,"b":{"[Circular]":true}}'
 ```
 
-### Parse
+## Parse
 
 ```javascript
 const jsonString = CircularJSON.stringify(obj);
@@ -53,7 +53,7 @@ console.log(parsedObj)
 { a: 1, b: [Circular] }
 ```
 
-### stringifyAndParse
+## stringifyAndParse
 
 #### `stringifyAndParse` method that combines the `stringify` and `parse` methods into a single operation.
 
@@ -74,7 +74,7 @@ const parsedObj = CircularJSON.stringifyAndParse(obj);
 
 #### The `stringify` method takes an optional `replacer` function and an optional `space` parameter, which work the same way as the corresponding parameters in `JSON.stringify`.
 
-### stringify - space
+## stringify - space
 
 ```javascript
 const obj = {
@@ -99,8 +99,8 @@ console.log(jsonStrWithTab);
 
 ```javascript
 {
-	"name": "John",
-	"age": 30,
+  "name": "John",
+  "age": 30,
 	"hobbies": [
 		"reading",
 		"running",
@@ -116,7 +116,7 @@ console.log(jsonStrWithTab);
 
 ```
 
-### stringify - replacer
+## stringify - replacer
 
 ```javascript
 const obj = {
@@ -161,7 +161,7 @@ console.log(jsonString);
 }
 ```
 
-### parse - reviver
+## parse - reviver
 
 #### The `parse` method takes an optional `reviver` function, which works the same way as the corresponding parameter in `JSON.parse`.
 
