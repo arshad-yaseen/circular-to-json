@@ -1,7 +1,7 @@
-
 # Circular-to-JSON
 
 #### Circular-to-JSON is a small package that allows you to safely stringify and parse objects with circular references using the JSON format. This package is written in TypeScript.
+
 ## Installation
 
 You can install using NPM or Yarn:
@@ -15,6 +15,7 @@ You can install using NPM or Yarn:
   yarn add circular-to-json
 
 ```
+
 ## Simple Usage
 
 #### This package exports a `CircularJSON` object with two methods: `stringify`, `parse` and `stringifyAndParse`. Here's how you can use them:
@@ -22,21 +23,20 @@ You can install using NPM or Yarn:
 ## Stringify
 
 ```javascript
-import { CircularJSON } from 'circular-to-json';
+import { CircularJSON } from "circular-to-json";
 
 const obj = { a: 1 };
 obj.b = obj; // adding circular reference
 
 const jsonString = CircularJSON.stringify(obj);
 
-console.log(jsonString)
-
+console.log(jsonString);
 ```
 
 #### Output
 
 ```javascript
-'{"a":1,"b":{"[Circular]":true}}'
+'{"a":1,"b":{"[Circular]":true}}';
 ```
 
 ## Parse
@@ -44,7 +44,7 @@ console.log(jsonString)
 ```javascript
 const jsonString = CircularJSON.stringify(obj);
 const parsedObj = CircularJSON.parse(jsonString);
-console.log(parsedObj)
+console.log(parsedObj);
 ```
 
 #### Output
@@ -62,7 +62,6 @@ const obj = { a: 1 };
 obj.b = obj;
 
 const parsedObj = CircularJSON.stringifyAndParse(obj);
-
 ```
 
 #### Output
@@ -70,6 +69,7 @@ const parsedObj = CircularJSON.stringifyAndParse(obj);
 ```javascript
 { a: 1, b: [Circular] }
 ```
+
 ## Other Usage
 
 #### The `stringify` method takes an optional `replacer` function and an optional `space` parameter, which work the same way as the corresponding parameters in `JSON.stringify`.
@@ -80,6 +80,7 @@ const parsedObj = CircularJSON.stringifyAndParse(obj);
 const obj = {
   name: "John",
   age: 30,
+  hobbies: ["reading", "running", "cooking"],
   address: {
     street: "123 Main St",
     city: "Anytown",
@@ -88,9 +89,12 @@ const obj = {
   }
 };
 
-// Set the space parameter to '\t' to use a tab for indentation
+// Set the space parameter to 2 to use 2 spaces for indentation
+const jsonStrWith2Spaces = CircularJSON.stringify(obj, null, 2);
+console.log(jsonStrWith2Spaces);
 
-const jsonStrWithTab = CircularJSON.stringify(obj, undefined, '\t');
+// Set the space parameter to '\t' to use a tab for indentation
+const jsonStrWithTab = CircularJSON.stringify(obj, null, '\t');
 console.log(jsonStrWithTab);
 
 ```
@@ -99,20 +103,21 @@ console.log(jsonStrWithTab);
 
 ```javascript
 {
-  "name": "John",
-  "age": 30,
+	"name": "John",
+	"age": 30,
 	"hobbies": [
-		"reading",
-		"running",
-		"cooking"
+		  "reading",
+		  "running",
+		  "cooking"
 	],
 	"address": {
-		"street": "123 Main St",
-		"city": "Anytown",
-		"state": "CA",
-		"zip": "12345"
+		  "street": "123 Main St",
+		  "city": "Anytown",
+		  "state": "CA",
+		  "zip": "12345"
 	}
 }
+
 
 ```
 
@@ -139,7 +144,6 @@ const replacer = (key, value) => {
 const jsonString = CircularJSON.stringify(obj, replacer);
 
 console.log(jsonString);
-
 ```
 
 #### Output
@@ -166,20 +170,19 @@ console.log(jsonString);
 #### The `parse` method takes an optional `reviver` function, which works the same way as the corresponding parameter in `JSON.parse`.
 
 ```javascript
-const jsonString = '{"name":"John Smith","age":30,"car":{"model":"Tesla","year":2022}}';
+const jsonString =
+  '{"name":"John Smith","age":30,"car":{"model":"Tesla","year":2022}}';
 
 const reviver = (key, value) => {
-  if (typeof value === 'string' && key !== '') {
+  if (typeof value === "string" && key !== "") {
     return value.toUpperCase(); // convert all string values (except the root object) to uppercase
   }
   return value; // otherwise return the original value
-}
+};
 
 const obj = JSON.parse(jsonString, reviver);
 
 console.log(obj);
-
-
 ```
 
 #### Output
@@ -195,6 +198,7 @@ console.log(obj);
 }
 
 ```
+
 ### Contributing
 
 #### circular-to-json is an open-source project, and we welcome contributions from the community.
