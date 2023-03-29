@@ -1,0 +1,38 @@
+{
+  "name": "circular-to-json",
+  "version": "1.0.0",
+  "description": "Convert your Circular structure to a JSON string very easily and very accurate",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arshad-yaseen/circular-to-json.git"
+  },
+  "keywords": [
+    "circular",
+    "circular-json",
+    "json",
+    "circular",
+    "structure",
+    "circular-to-json",
+    "circular-json",
+    "JSON",
+    "circular",
+    "reference",
+    "recursive",
+    "recursion",
+    "parse",
+    "stringify"
+  ],
+  "author": "Arshad Yaseen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arshad-yaseen/circular-to-json/issues"
+  },
+  "homepage": "https://github.com/arshad-yaseen/circular-to-json#readme",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
