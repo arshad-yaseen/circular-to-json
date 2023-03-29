@@ -23,7 +23,7 @@ You can install using NPM or Yarn:
 ## Stringify
 
 ```javascript
-import { CircularJSON } from "circular-to-json";
+import CircularJSON from "circular-to-json";
 
 const obj = { a: 1 };
 obj.b = obj; // adding circular reference
@@ -106,15 +106,15 @@ console.log(jsonStrWithTab);
 	"name": "John",
 	"age": 30,
 	"hobbies": [
-		  "reading",
-		  "running",
-		  "cooking"
+		"reading",
+		"running",
+		"cooking"
 	],
 	"address": {
-		  "street": "123 Main St",
-		  "city": "Anytown",
-		  "state": "CA",
-		  "zip": "12345"
+		"street": "123 Main St",
+		"city": "Anytown",
+		"state": "CA",
+		"zip": "12345"
 	}
 }
 
