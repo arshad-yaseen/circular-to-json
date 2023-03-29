@@ -89,12 +89,8 @@ const obj = {
   }
 };
 
-// Set the space parameter to 2 to use 2 spaces for indentation
-const jsonStrWith2Spaces = CircularJSON.stringify(obj, null, 2);
-console.log(jsonStrWith2Spaces);
-
 // Set the space parameter to '\t' to use a tab for indentation
-const jsonStrWithTab = CircularJSON.stringify(obj, null, '\t');
+const jsonStrWithTab = CircularJSON.stringify(obj, undefined, '\t');
 console.log(jsonStrWithTab);
 
 ```
