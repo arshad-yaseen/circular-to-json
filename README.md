@@ -27,11 +27,19 @@ You can install using NPM or Yarn:
 ```
 # Usage
 
+## Import
+
+```javascript
+import CircularJSON from "circular-to-json"
+```
+
+```javascript
+const CircularJSON = require("circular-to-json")
+```
+
 ### `stringify` function:
 
 ```javascript
-const CircularJSON = require('circular-json');
-
 const obj = {
   prop1: "value1",
   prop2: "value2"
