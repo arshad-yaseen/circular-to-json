@@ -25,9 +25,7 @@ You can install using NPM or Yarn:
   yarn add circular-to-json
 
 ```
-# Usage
-
-## Import
+# Import
 
 ```javascript
 import CircularJSON from "circular-to-json"
