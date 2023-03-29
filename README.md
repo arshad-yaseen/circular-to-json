@@ -1,8 +1,8 @@
 
-## Circular-to-JSON
+# Circular-to-JSON
 
 #### Circular-to-JSON is a small package that allows you to safely stringify and parse objects with circular references using the JSON format. This package is written in TypeScript.
-# Installation
+## Installation
 
 You can install using NPM or Yarn:
 
@@ -15,13 +15,11 @@ You can install using NPM or Yarn:
   yarn add circular-to-json
 
 ```
-# Usage
-
 ## Simple Usage
 
 #### This package exports a `CircularJSON` object with two methods: `stringify`, `parse` and `stringifyAndParse`. Here's how you can use them:
 
-## Stringify
+### Stringify
 
 ```javascript
 import { CircularJSON } from 'circular-to-json';
@@ -41,7 +39,7 @@ console.log(jsonString)
 '{"a":1,"b":{"[Circular]":true}}'
 ```
 
-## Parse
+### Parse
 
 ```javascript
 const jsonString = CircularJSON.stringify(obj);
@@ -55,7 +53,7 @@ console.log(parsedObj)
 { a: 1, b: [Circular] }
 ```
 
-## stringifyAndParse
+### stringifyAndParse
 
 #### `stringifyAndParse` method that combines the `stringify` and `parse` methods into a single operation.
 
@@ -72,11 +70,11 @@ const parsedObj = CircularJSON.stringifyAndParse(obj);
 ```javascript
 { a: 1, b: [Circular] }
 ```
-## Other Props Usage
+## Other Usage
 
 #### The `stringify` method takes an optional `replacer` function and an optional `space` parameter, which work the same way as the corresponding parameters in `JSON.stringify`.
 
-## stringify - space
+### stringify - space
 
 ```javascript
 const obj = {
@@ -118,7 +116,7 @@ console.log(jsonStrWithTab);
 
 ```
 
-## stringify - replacer
+### stringify - replacer
 
 ```javascript
 const obj = {
@@ -163,7 +161,7 @@ console.log(jsonString);
 }
 ```
 
-## parse - reviver
+### parse - reviver
 
 #### The `parse` method takes an optional `reviver` function, which works the same way as the corresponding parameter in `JSON.parse`.
 
@@ -197,10 +195,10 @@ console.log(obj);
 }
 
 ```
-## Contributing
+### Contributing
 
 #### circular-to-json is an open-source project, and we welcome contributions from the community.
 
-## Licence
+### Licence
 
 #### CircularJSON is licensed under the `MIT License`.
